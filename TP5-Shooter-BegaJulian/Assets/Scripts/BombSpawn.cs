@@ -32,7 +32,7 @@ public class BombSpawn : MonoBehaviour
         SpawnPoint.x = Random.Range(manager.MinXSpawnPosition, manager.MaxXSpawnPosition);
         SpawnPoint.z = Random.Range(manager.MinZSpawnPosition, manager.MaxZSpawnPosition);
 
-        SpawnPoint.y = manager.MyTerrain.SampleHeight(transform.position);
+        SpawnPoint.y = manager.MyTerrain.SampleHeight(SpawnPoint);
         return SpawnPoint;
     }
 }

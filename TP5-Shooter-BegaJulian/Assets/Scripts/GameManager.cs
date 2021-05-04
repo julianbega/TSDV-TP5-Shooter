@@ -6,7 +6,7 @@ public class GameManager : MonoBehaviour
 {
 
     public int PointsForDestroyingBomb;
-
+    public int points;
     public int PointsPerBox;
 
     public float MinXSpawnPosition;
@@ -15,7 +15,7 @@ public class GameManager : MonoBehaviour
     public float MaxZSpawnPosition;
 
     public Terrain MyTerrain;
-
+    public SceneLoader SceneController;
 
 
     // Start is called before the first frame update

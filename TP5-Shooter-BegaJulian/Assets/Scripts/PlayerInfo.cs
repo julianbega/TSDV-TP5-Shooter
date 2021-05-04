@@ -10,7 +10,8 @@ public class PlayerInfo : MonoBehaviour
 
     public int PlayerHP;
     public Gun[] ActualGun;
-    public int GunRange;
+
+    public GameManager gameManager;
 
     public UnityEvent<int> changeUI; 
     void Start()
@@ -20,11 +21,24 @@ public class PlayerInfo : MonoBehaviour
 
     void Update()
     {
-        
+        if(PlayerHP <= 0)
+        {
+            gameManager.SceneController.LoadScene("Credits");
+        }
         if (false)
         {
             changeUI?.Invoke(PlayerHP);
 
+        }
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.tag == "Bomb")
+        {
+            PlayerHP -= 50;
+           
+           
         }
     }
 }
