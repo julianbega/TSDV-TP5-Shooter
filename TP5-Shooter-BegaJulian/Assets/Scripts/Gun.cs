@@ -9,7 +9,9 @@ public class Gun : MonoBehaviour
     public int GunID;
     public int TotalBullets;
     public int BulletsPerClip;
+    public int ActualBullets;
     public int TimeToReload;
+    public int Range;
 
     // Start is called before the first frame update
     void Start()

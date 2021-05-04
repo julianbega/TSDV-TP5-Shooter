@@ -5,12 +5,17 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
 
-    public int BombDamage;
-    public int TimeToSpawnBomb;
     public int PointsForDestroyingBomb;
 
     public int PointsPerBox;
-    public int TimeToSpawnBox;
+
+    public float MinXSpawnPosition;
+    public float MaxXSpawnPosition;
+    public float MinZSpawnPosition;
+    public float MaxZSpawnPosition;
+
+    public Terrain MyTerrain;
+
 
 
     // Start is called before the first frame update

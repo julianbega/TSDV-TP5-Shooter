@@ -2,11 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Bomb : MonoBehaviour
+public class Explotion : MonoBehaviour
 {
-    public int BombDamage;
-    public int TimeToExplotion;
-    float ActualTimeToExplotion;
+    // Start is called before the first frame update
     void Start()
     {
         
