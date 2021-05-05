@@ -48,5 +48,9 @@ public class PlayerInfo : MonoBehaviour
             gameManager.boxesCollected++;
             Destroy(other);
         }
+        if (other.gameObject.tag == "Ghost")
+        {
+            PlayerHP -= 10
+        }
     }
 }
