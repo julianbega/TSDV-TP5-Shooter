@@ -4,10 +4,17 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-
-    public int PointsForDestroyingBomb;
     public int points;
+
+    public int PointsForDestroyingBomb;    
+    public int bombsDestroyed;
+
+    public int PointsForKillingGhosts;
+    public int ghostsKilled;
+
     public int PointsPerBox;
+    public int boxesCollected;
+
 
     public float MinXSpawnPosition;
     public float MaxXSpawnPosition;

@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 
 public class Gun : MonoBehaviour
@@ -17,49 +18,79 @@ public class Gun : MonoBehaviour
     GameManager gameManager;
 
     [SerializeField] Camera CameraForGun;
+
+    public Text Bullets;
+    public Text TotalBulletsLeft;
     void Start()
     {
         gameManagerContainer = GameObject.Find("GameManager");
         gameManager = gameManagerContainer.GetComponent<GameManager>();
+        Bullets.text = (ActualBullets + " / " + BulletsPerClip);
+        TotalBulletsLeft.text = (TotalBullets.ToString());
     }
 
     // Update is called once per frame
     void Update()
     {
-
+        if (Input.GetKeyDown(KeyCode.R))
+        {
+            if(TotalBullets >= BulletsPerClip)
+            { 
+            TotalBullets -= BulletsPerClip;
+            ActualBullets = BulletsPerClip;
+            }
+            else if (TotalBullets >= 0)
+            {
+                ActualBullets = TotalBullets;
+                TotalBullets = 0;
+            }
+            else
+            {
+                ActualBullets = 0;
+            }
+        }
         if (Input.GetButtonDown("Fire1"))
         {
-            RaycastHit myHit;
-            Vector3 MousePos;
-            MousePos = Input.mousePosition;
-            Ray myRay; 
-            myRay = CameraForGun.ScreenPointToRay(MousePos);
-            
-
-            if(Physics.Raycast(myRay.origin, myRay.direction * Range, out myHit))
+            if (ActualBullets > 0)
             {
-                switch(GunID)
-                {
-                    case 0:
-                        if(myHit.transform.gameObject.tag == "Bomb")
-                        {
-                            Instantiate(myHit.transform.gameObject.GetComponent<Explotion>().Explosion, myHit.transform.position, Quaternion.identity);                            
-                            myHit.transform.gameObject.SetActive(false);
-                            gameManager.points = gameManager.points + gameManager.PointsForDestroyingBomb;
-                        }
-                        break;
-                    case 1:
+                ActualBullets--;
+                RaycastHit myHit;
+                Vector3 MousePos;
+                MousePos = Input.mousePosition;
+                Ray myRay;
+                myRay = CameraForGun.ScreenPointToRay(MousePos);
 
-                        break;
-                    default:
-                        break;
+
+                if (Physics.Raycast(myRay.origin, myRay.direction * Range, out myHit))
+                {
+
+                    switch (GunID)
+                    {
+                        case 0:
+                            if (myHit.transform.gameObject.tag == "Bomb")
+                            {
+                                Instantiate(myHit.transform.gameObject.GetComponent<Explotion>().Explosion, myHit.transform.position, Quaternion.identity);
+                                myHit.transform.gameObject.SetActive(false);
+                                gameManager.points = gameManager.points + gameManager.PointsForDestroyingBomb;
+                                gameManager.bombsDestroyed++;
+                            }
+                            break;
+                        case 1:
+
+                            break;
+                        default:
+                            break;
+                    }
+                    Debug.Log(myHit.transform.gameObject.tag);
+
                 }
-                Debug.Log(myHit.transform.gameObject.tag);
             }
-            
 
         }
+
+        Bullets.text = (ActualBullets + " / " + BulletsPerClip);
+        TotalBulletsLeft.text = (TotalBullets.ToString());
     }
 
-   
+
 }

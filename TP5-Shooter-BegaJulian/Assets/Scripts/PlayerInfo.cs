@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.Events;
 
 public class PlayerInfo : MonoBehaviour
@@ -9,6 +10,7 @@ public class PlayerInfo : MonoBehaviour
 
 
     public int PlayerHP;
+    public Text HP;
     public Gun[] ActualGun;
 
     public GameManager gameManager;
@@ -16,12 +18,13 @@ public class PlayerInfo : MonoBehaviour
     public UnityEvent<int> changeUI; 
     void Start()
     {
-        
+        HP.text = ("HP: "+PlayerHP);
     }
 
     void Update()
     {
-        if(PlayerHP <= 0)
+        HP.text = ("HP: " + PlayerHP);
+        if (PlayerHP <= 0)
         {
             gameManager.SceneController.LoadScene("Credits");
         }
@@ -36,9 +39,14 @@ public class PlayerInfo : MonoBehaviour
     {
         if (other.gameObject.tag == "Bomb")
         {
-            PlayerHP -= 50;
+            PlayerHP -= 50;         
            
-           
+        }
+        if (other.gameObject.tag == "Box")
+        {
+            gameManager.points += gameManager.PointsPerBox;
+            gameManager.boxesCollected++;
+            Destroy(other);
         }
     }
 }
