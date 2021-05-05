@@ -47,7 +47,7 @@ GameObject:
   - component: {fileID: 5036131292708881000}
   - component: {fileID: 1691401745001871349}
   m_Layer: 0
-  m_Name: Cylinder (1)
+  m_Name: BallThrowerCharger
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -141,7 +141,7 @@ GameObject:
   - component: {fileID: 6013998353584685962}
   - component: {fileID: 1102120785365664272}
   m_Layer: 0
-  m_Name: Cube (1)
+  m_Name: BallThrowerSmallHandler
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -234,7 +234,7 @@ GameObject:
   - component: {fileID: 189124095749480702}
   - component: {fileID: 6779568281344260754}
   m_Layer: 0
-  m_Name: Cylinder
+  m_Name: BallThrowerCannon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -328,7 +328,7 @@ GameObject:
   - component: {fileID: 9121528317087241575}
   - component: {fileID: 8646772271188797256}
   m_Layer: 0
-  m_Name: Cube
+  m_Name: BallThrowerBigHandler
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
