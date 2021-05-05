@@ -50,7 +50,7 @@ public class PlayerInfo : MonoBehaviour
         }
         if (other.gameObject.tag == "Ghost")
         {
-            PlayerHP -= 10
+            PlayerHP -= 10;
         }
     }
 }
