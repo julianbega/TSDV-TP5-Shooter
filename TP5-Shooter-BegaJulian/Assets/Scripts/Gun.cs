@@ -71,7 +71,7 @@ public class Gun : MonoBehaviour
                             {
                                 Instantiate(myHit.transform.gameObject.GetComponent<Explotion>().Explosion, myHit.transform.position, Quaternion.identity);
                                 myHit.transform.gameObject.SetActive(false);
-                                gameManager.points = gameManager.points + gameManager.PointsForDestroyingBomb;
+                                gameManager.score = gameManager.score + gameManager.scoreForDestroyingBomb;
                                 gameManager.bombsDestroyed++;
                             }
                             break;

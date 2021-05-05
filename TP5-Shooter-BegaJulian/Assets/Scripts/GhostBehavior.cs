@@ -21,8 +21,6 @@ public class GhostBehavior : MonoBehaviour
 
     private float time;
     public float timeForErraticMove = 2;
-    public float minDistance = 1f;
-    public float maxDistance = 2f;
 
     void Start()
     {
@@ -39,7 +37,7 @@ public class GhostBehavior : MonoBehaviour
                     time = timeForErraticMove;
                     float randomY = Random.Range(0, 360);
                     this.transform.Rotate(0.0f, randomY, 0.0f, Space.Self);
-                    transform.position += transform.forward * Random.Range(minDistance, maxDistance);
+                    transform.Translate(Vector3.forward * Speed * Time.deltaTime, Space.World);
                 }
                 if (Vector3.Distance(transform.position, Player.position) < DistanceToChase)
                 {

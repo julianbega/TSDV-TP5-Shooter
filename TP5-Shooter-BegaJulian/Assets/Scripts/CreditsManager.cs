@@ -18,7 +18,7 @@ public class CreditsManager : MonoBehaviour
         gameManager = GameObject.Find("GameManager");
         gamemanager = gameManager.GetComponent<GameManager>();
         Bombs.text = ("you destroy: " + gamemanager.bombsDestroyed.ToString() + " bombs");
-        Points.text = ("you make: " + gamemanager.points.ToString() + " points");
+        Points.text = ("you make: " + gamemanager.score.ToString() + " points");
         Boxes.text = ("you collect: " + gamemanager.boxesCollected.ToString() + " boxes");
         Ghosts.text = ("you kill: " + gamemanager.ghostsKilled.ToString() + " ghosts");
     }

@@ -4,15 +4,15 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    public int points;
+    public int score;
 
-    public int PointsForDestroyingBomb;    
+    public int scoreForDestroyingBomb;    
     public int bombsDestroyed;
 
-    public int PointsForKillingGhosts;
+    public int scoreForKillingGhosts;
     public int ghostsKilled;
 
-    public int PointsPerBox;
+    public int scorePerBox;
     public int boxesCollected;
 
 

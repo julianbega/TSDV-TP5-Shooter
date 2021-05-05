@@ -58,7 +58,7 @@ public class PlayerInfo : MonoBehaviour
         }
         if (other.gameObject.tag == "Box")
         {
-            gameManager.points += gameManager.PointsPerBox;
+            gameManager.score += gameManager.scorePerBox;
             gameManager.boxesCollected++;
             Destroy(other);
         }
