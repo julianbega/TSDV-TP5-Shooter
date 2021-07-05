@@ -8,15 +8,19 @@ public class BombSpawn : MonoBehaviour
     float TimeToNextBomb;
 
     public GameObject BombPrefab;
-    GameManager manager;
-
-    void Start()
+    public GameManager manager;
+    public Terrain myTerrain;
+    void LateStart()
     {
-        manager = GetComponent<GameManager>();
+        myTerrain = FindObjectOfType<Terrain>();
         TimeToNextBomb = SpawnRatioTime;
     }
     void Update()
     {
+        if (myTerrain == null)
+        {
+            myTerrain = FindObjectOfType<Terrain>();
+        }
         TimeToNextBomb -= Time.deltaTime;
 
         if (TimeToNextBomb <= 0)
@@ -32,7 +36,7 @@ public class BombSpawn : MonoBehaviour
         SpawnPoint.x = Random.Range(manager.MinXSpawnPosition, manager.MaxXSpawnPosition);
         SpawnPoint.z = Random.Range(manager.MinZSpawnPosition, manager.MaxZSpawnPosition);
 
-        SpawnPoint.y = manager.MyTerrain.SampleHeight(SpawnPoint);
+        SpawnPoint.y = myTerrain.SampleHeight(SpawnPoint);
         return SpawnPoint;
     }
 }

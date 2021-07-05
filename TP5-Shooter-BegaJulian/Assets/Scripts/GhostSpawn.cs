@@ -8,10 +8,11 @@ public class GhostSpawn : MonoBehaviour
     float TimeToNextGhost;
 
     public GameObject GhostPrefab;
-    GameManager manager;
+    public GameManager manager;
+    Terrain myTerrain;
     void Start()
     {
-
+        myTerrain = FindObjectOfType<Terrain>();
         manager = GetComponent<GameManager>();
         TimeToNextGhost = SpawnRatioTime;
     }
@@ -36,7 +37,8 @@ public class GhostSpawn : MonoBehaviour
         SpawnPoint.x = Random.Range(manager.MinXSpawnPosition, manager.MaxXSpawnPosition);
         SpawnPoint.z = Random.Range(manager.MinZSpawnPosition, manager.MaxZSpawnPosition);
 
-        SpawnPoint.y = manager.MyTerrain.SampleHeight(SpawnPoint) + GhostPrefab.transform.localScale.y / 2;
+        
+        SpawnPoint.y = myTerrain.SampleHeight(SpawnPoint) + GhostPrefab.transform.localScale.y / 2;
         return SpawnPoint;
     }
 }

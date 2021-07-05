@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.Events;
 
+
 public class PlayerInfo : MonoBehaviour
 {
 
@@ -60,7 +61,7 @@ public class PlayerInfo : MonoBehaviour
         {
             gameManager.score += gameManager.scorePerBox;
             gameManager.boxesCollected++;
-            Destroy(other);
+            Destroy(other.transform.gameObject);
         }
         if (other.gameObject.tag == "Ghost")
         {

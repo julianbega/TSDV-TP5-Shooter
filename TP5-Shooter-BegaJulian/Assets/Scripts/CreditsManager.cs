@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class CreditsManager : MonoBehaviour
 {
     GameObject gameManager;
-    GameManager gamemanager;
+   public GameManager gamemanager;
 
     public Text Points;
     public Text Boxes;

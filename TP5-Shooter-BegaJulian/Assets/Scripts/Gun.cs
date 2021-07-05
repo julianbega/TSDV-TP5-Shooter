@@ -70,13 +70,18 @@ public class Gun : MonoBehaviour
                             if (myHit.transform.gameObject.tag == "Bomb")
                             {
                                 Instantiate(myHit.transform.gameObject.GetComponent<Explotion>().Explosion, myHit.transform.position, Quaternion.identity);
-                                myHit.transform.gameObject.SetActive(false);
+                                Destroy(myHit.transform.gameObject);
                                 gameManager.score = gameManager.score + gameManager.scoreForDestroyingBomb;
                                 gameManager.bombsDestroyed++;
                             }
                             break;
                         case 1:
-
+                            if (myHit.transform.gameObject.tag == "Ghost")
+                            {                                
+                                Destroy(myHit.transform.gameObject);
+                                gameManager.score = gameManager.score + gameManager.scoreForKillingGhosts;
+                                gameManager.ghostsKilled++;
+                            }
                             break;
                         default:
                             break;

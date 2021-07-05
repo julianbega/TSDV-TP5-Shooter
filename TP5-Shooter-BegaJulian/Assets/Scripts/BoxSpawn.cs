@@ -8,11 +8,11 @@ public class BoxSpawn : MonoBehaviour
     float TimeToNextBox;
 
     public GameObject BoxPrefab;
-    GameManager manager;
+    public GameManager manager;
+    Terrain myTerrain;
     void Start()
     {
-
-        manager = GetComponent<GameManager>();
+        myTerrain = FindObjectOfType<Terrain>();
         TimeToNextBox = SpawnRatioTime;
     }
 
@@ -36,7 +36,7 @@ public class BoxSpawn : MonoBehaviour
         SpawnPoint.x = Random.Range(manager.MinXSpawnPosition, manager.MaxXSpawnPosition);
         SpawnPoint.z = Random.Range(manager.MinZSpawnPosition, manager.MaxZSpawnPosition);
 
-        SpawnPoint.y = manager.MyTerrain.SampleHeight(SpawnPoint) + BoxPrefab.transform.localScale.y/2;
+        SpawnPoint.y = myTerrain.SampleHeight(SpawnPoint) + BoxPrefab.transform.localScale.y/2;
         return SpawnPoint;
     }
 }

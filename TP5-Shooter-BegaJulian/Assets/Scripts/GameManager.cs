@@ -21,19 +21,10 @@ public class GameManager : MonoBehaviour
     public float MinZSpawnPosition;
     public float MaxZSpawnPosition;
 
-    public Terrain MyTerrain;
     public SceneLoader SceneController;
-
-
-    // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
-        
+        DontDestroyOnLoad(gameObject);
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }

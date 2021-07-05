@@ -10,7 +10,7 @@ public class Ball : MonoBehaviour
         if (other.gameObject.tag == "Ghost")
         {
             other.GetComponent<GhostBehavior>().GhostHP -= 10;
-            Destroy(this);
+            Destroy(this.gameObject);
         }
     }
 }

@@ -1,0 +1,119 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &2215579977075598533
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2215579977075598538}
+  - component: {fileID: 2215579977075598539}
+  - component: {fileID: 2215579977075598537}
+  - component: {fileID: 2215579977075598536}
+  - component: {fileID: 2215579977075598542}
+  - component: {fileID: 2215579977075598543}
+  m_Layer: 0
+  m_Name: GameManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2215579977075598538
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2215579977075598533}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 414.15335, y: 204.8975, z: -21.110489}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2215579977075598539
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2215579977075598533}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d46e1e771c4ed5947a4c24e5b8b145f9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  score: 0
+  scoreForDestroyingBomb: 0
+  bombsDestroyed: 0
+  scoreForKillingGhosts: 0
+  ghostsKilled: 0
+  scorePerBox: 0
+  boxesCollected: 0
+  MinXSpawnPosition: -130
+  MaxXSpawnPosition: 126
+  MinZSpawnPosition: -110
+  MaxZSpawnPosition: 126
+  MyTerrain: {fileID: 0}
+  SceneController: {fileID: 2215579977075598542}
+--- !u!114 &2215579977075598537
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2215579977075598533}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4c5b6504e9d87a4449f4b653f6c38c1f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SpawnRatioTime: 10
+  BombPrefab: {fileID: 7353692372000838126, guid: 21a97bcd581608d4ab1d74ef1d3cd491,
+    type: 3}
+--- !u!114 &2215579977075598536
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2215579977075598533}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7ff2bd3fc34f9e349b04a5f67e1c53e9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SpawnRatioTime: 20
+  BoxPrefab: {fileID: 4826967784739474184, guid: 8be1b02b3b0975b4082504df085dc136,
+    type: 3}
+--- !u!114 &2215579977075598542
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2215579977075598533}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e81cc5516c004794b974c495bb9cb3f1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &2215579977075598543
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2215579977075598533}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8d2f301d33db00740b86096079bbc754, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SpawnRatioTime: 5
+  GhostPrefab: {fileID: 3357252165577270210, guid: 7158ccd7c21cc064ea770f8437313a4c,
+    type: 3}
